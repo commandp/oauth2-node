@@ -1,0 +1,34 @@
+{
+  "name": "oauth2",
+  "description": "OAuth2 client for node.js",
+  "version": "0.1.0",
+  "author": "commandp dev team <dev@commandp.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/CommandP/oauth2-node.git"
+  },
+  "bugs": "http://github.com/CommandP/oauth2-node/issues",
+  "dependencies": {
+    "babel-runtime": "^4.7.16",
+    "lodash": "^3.9.3",
+    "promise": "^7.0.1",
+    "querystring": "^0.2.0",
+    "superagent": "^1.2.0",
+    "superagent-defaults": "^0.1.12",
+    "superagent-prefix": "0.0.2"
+  },
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "devDependencies": {
+    "babel": "^5.4.7",
+    "glob": "^5.0.10",
+    "tape": "^4.0.0"
+  },
+  "scripts": {
+    "lint": "eslint lib/*.js",
+    "prepublish": "npm run compile",
+    "test": "npm run compile && babel-node test/harness.js test/**/*.js",
+    "compile": "babel --optional runtime --modules common --out-dir dist lib/**.js"
+  },
+  "main": "./dist/lib/index"
+}
