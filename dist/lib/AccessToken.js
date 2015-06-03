@@ -1,22 +1,22 @@
 'use strict';
 
-var _createClass = require('babel-runtime/helpers/create-class')['default'];
-
-var _classCallCheck = require('babel-runtime/helpers/class-call-check')['default'];
-
-var _Object$defineProperty = require('babel-runtime/core-js/object/define-property')['default'];
-
-var _Promise = require('babel-runtime/core-js/promise')['default'];
-
-var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
-
-_Object$defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 var _lodash = require('lodash');
 
 var _lodash2 = _interopRequireDefault(_lodash);
+
+var _promise = require('promise');
+
+var _promise2 = _interopRequireDefault(_promise);
 
 var AccessToken = (function () {
   function AccessToken(client, _ref) {
@@ -58,7 +58,7 @@ var AccessToken = (function () {
     value: function get(path, params) {
       var _this = this;
 
-      return new _Promise(function (resolve, reject) {
+      return new _promise2['default'](function (resolve, reject) {
         var handler = function handler(err, res) {
           return err ? reject(err) : resolve(res.body);
         };
@@ -70,7 +70,7 @@ var AccessToken = (function () {
     value: function post(path, params) {
       var _this2 = this;
 
-      return new _Promise(function (resolve, reject) {
+      return new _promise2['default'](function (resolve, reject) {
         var handler = function handler(err, res) {
           return err ? reject(err) : resolve(res.body);
         };
@@ -82,7 +82,7 @@ var AccessToken = (function () {
     value: function patch(path, params) {
       var _this3 = this;
 
-      return new _Promise(function (resolve, reject) {
+      return new _promise2['default'](function (resolve, reject) {
         var handler = function handler(err, res) {
           return err ? reject(err) : resolve(res.body);
         };
@@ -94,7 +94,7 @@ var AccessToken = (function () {
     value: function put(path, params) {
       var _this4 = this;
 
-      return new _Promise(function (resolve, reject) {
+      return new _promise2['default'](function (resolve, reject) {
         var handler = function handler(err, res) {
           return err ? reject(err) : resolve(res.body);
         };
@@ -106,7 +106,7 @@ var AccessToken = (function () {
     value: function _delete(path, params) {
       var _this5 = this;
 
-      return new _Promise(function (resolve, reject) {
+      return new _promise2['default'](function (resolve, reject) {
         var handler = function handler(err, res) {
           return err ? reject(err) : resolve(res.body);
         };
