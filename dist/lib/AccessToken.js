@@ -22,6 +22,8 @@ var AccessToken = (function () {
   function AccessToken(client, _ref) {
     var access_token = _ref.access_token;
     var refresh_token = _ref.refresh_token;
+    var created_at = _ref.created_at;
+    var expires_in = _ref.expires_in;
     var scope = _ref.scope;
 
     _classCallCheck(this, AccessToken);
@@ -30,6 +32,8 @@ var AccessToken = (function () {
     this.client = client;
     this.accessToken = access_token; // eslint-disable-line camelcase
     this.refreshToken = refresh_token; // eslint-disable-line camelcase
+    this.createdAt = created_at; // eslint-disable-line camelcase
+    this.expiresIn = expires_in; // eslint-disable-line camelcase
     this.scope = scope;
     this.http = this.client.http.set('Authorization', 'Bearer ' + this.accessToken);
     _lodash2['default'].assign(this, this.client.accessTokenMixin);
@@ -41,8 +45,17 @@ var AccessToken = (function () {
       return {
         access_token: this.accessToken, // eslint-disable-line camelcase
         refresh_token: this.refreshToken, // eslint-disable-line camelcase
+        created_at: createdAt, // eslint-disable-line camelcase
+        expires_in: expiresIn, // eslint-disable-line camelcase
         scope: this.scope
       };
+    }
+  }, {
+    key: 'isExpired',
+    value: function isExpired() {
+      var expiresAt = (this.createdAt + this.expiresIn) * 1000;
+      var now = new Date().getTime();
+      return expiresAt < now;
     }
   }, {
     key: 'refresh',
