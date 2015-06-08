@@ -21,6 +21,8 @@
   "optionalDependencies": {},
   "devDependencies": {
     "babel": "^5.4.7",
+    "babel-eslint": "^3.1.14",
+    "eslint": "^0.22.1",
     "glob": "^5.0.10",
     "tape": "^4.0.0"
   },

@@ -45,8 +45,8 @@ var AccessToken = (function () {
       return {
         access_token: this.accessToken, // eslint-disable-line camelcase
         refresh_token: this.refreshToken, // eslint-disable-line camelcase
-        created_at: createdAt, // eslint-disable-line camelcase
-        expires_in: expiresIn, // eslint-disable-line camelcase
+        created_at: this.createdAt, // eslint-disable-line camelcase
+        expires_in: this.expiresIn, // eslint-disable-line camelcase
         scope: this.scope
       };
     }
