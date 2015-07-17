@@ -35,7 +35,7 @@ var AccessToken = (function () {
     this.createdAt = created_at; // eslint-disable-line camelcase
     this.expiresIn = expires_in; // eslint-disable-line camelcase
     this.scope = scope;
-    this.http = this.client.http.set('Authorization', 'Bearer ' + this.accessToken);
+    this.http = this.client.buildHTTP().set('Authorization', 'Bearer ' + this.accessToken);
     _lodash2['default'].assign(this, this.client.accessTokenMixin);
   }
 

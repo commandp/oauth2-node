@@ -59,14 +59,21 @@ var Client = (function () {
     this.clientSecret = clientSecret;
     this.authorizePath = authorizePath || '/oauth/authorize';
     this.tokenPath = tokenPath || '/oauth/token';
-    this.http = (0, _superagentDefaults2['default'])().use((0, _superagentPrefix2['default'])(this.site)).accept('json');
-    if (connectionBuild) {
-      this.http = connectionBuild(this.http);
-    }
+    this.connectionBuild = connectionBuild;
+    this.http = this.buildHTTP();
     this.accessTokenMixin = accessTokenMixin;
   }
 
   _createClass(Client, [{
+    key: 'buildHTTP',
+    value: function buildHTTP() {
+      var http = (0, _superagentDefaults2['default'])().use((0, _superagentPrefix2['default'])(this.site)).accept('json');
+      if (this.connectionBuild) {
+        http = this.connectionBuild(http);
+      }
+      return http;
+    }
+  }, {
     key: 'authCode',
     value: function authCode() {
       return new _AuthCode2['default'](this);
