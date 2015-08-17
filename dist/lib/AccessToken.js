@@ -68,62 +68,62 @@ var AccessToken = (function () {
     }
   }, {
     key: 'get',
-    value: function get(path, params) {
+    value: function get(path, params, headers) {
       var _this = this;
 
       return new _promise2['default'](function (resolve, reject) {
         var handler = function handler(err, res) {
           return err ? reject(err) : resolve(res.body);
         };
-        _this.http.get(path).query(params).end(handler);
+        _this.http.get(path).set(headers).query(params).end(handler);
       });
     }
   }, {
     key: 'post',
-    value: function post(path, params) {
+    value: function post(path, params, headers) {
       var _this2 = this;
 
       return new _promise2['default'](function (resolve, reject) {
         var handler = function handler(err, res) {
           return err ? reject(err) : resolve(res.body);
         };
-        _this2.http.post(path).send(params).end(handler);
+        _this2.http.post(path).set(headers).send(params).end(handler);
       });
     }
   }, {
     key: 'patch',
-    value: function patch(path, params) {
+    value: function patch(path, params, headers) {
       var _this3 = this;
 
       return new _promise2['default'](function (resolve, reject) {
         var handler = function handler(err, res) {
           return err ? reject(err) : resolve(res.body);
         };
-        _this3.http.patch(path).query(params).end(handler);
+        _this3.http.patch(path).set(headers).query(params).end(handler);
       });
     }
   }, {
     key: 'put',
-    value: function put(path, params) {
+    value: function put(path, params, headers) {
       var _this4 = this;
 
       return new _promise2['default'](function (resolve, reject) {
         var handler = function handler(err, res) {
           return err ? reject(err) : resolve(res.body);
         };
-        _this4.http.put(path).send(params).end(handler);
+        _this4.http.put(path).set(headers).send(params).end(handler);
       });
     }
   }, {
     key: 'delete',
-    value: function _delete(path, params) {
+    value: function _delete(path, params, headers) {
       var _this5 = this;
 
       return new _promise2['default'](function (resolve, reject) {
         var handler = function handler(err, res) {
           return err ? reject(err) : resolve(res.body);
         };
-        _this5.http.del(path).query(params).end(handler);
+        _this5.http.del(path).set(headers).query(params).end(handler);
       });
     }
   }]);
