@@ -68,8 +68,10 @@ var AccessToken = (function () {
     }
   }, {
     key: 'get',
-    value: function get(path, params, headers) {
+    value: function get(path, params) {
       var _this = this;
+
+      var headers = arguments[2] === undefined ? {} : arguments[2];
 
       return new _promise2['default'](function (resolve, reject) {
         var handler = function handler(err, res) {
@@ -80,8 +82,10 @@ var AccessToken = (function () {
     }
   }, {
     key: 'post',
-    value: function post(path, params, headers) {
+    value: function post(path, params) {
       var _this2 = this;
+
+      var headers = arguments[2] === undefined ? {} : arguments[2];
 
       return new _promise2['default'](function (resolve, reject) {
         var handler = function handler(err, res) {
@@ -92,8 +96,10 @@ var AccessToken = (function () {
     }
   }, {
     key: 'patch',
-    value: function patch(path, params, headers) {
+    value: function patch(path, params) {
       var _this3 = this;
+
+      var headers = arguments[2] === undefined ? {} : arguments[2];
 
       return new _promise2['default'](function (resolve, reject) {
         var handler = function handler(err, res) {
@@ -104,8 +110,10 @@ var AccessToken = (function () {
     }
   }, {
     key: 'put',
-    value: function put(path, params, headers) {
+    value: function put(path, params) {
       var _this4 = this;
+
+      var headers = arguments[2] === undefined ? {} : arguments[2];
 
       return new _promise2['default'](function (resolve, reject) {
         var handler = function handler(err, res) {
@@ -116,8 +124,10 @@ var AccessToken = (function () {
     }
   }, {
     key: 'delete',
-    value: function _delete(path, params, headers) {
+    value: function _delete(path, params) {
       var _this5 = this;
+
+      var headers = arguments[2] === undefined ? {} : arguments[2];
 
       return new _promise2['default'](function (resolve, reject) {
         var handler = function handler(err, res) {
