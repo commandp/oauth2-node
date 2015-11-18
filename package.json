@@ -10,8 +10,8 @@
   "bugs": "http://github.com/CommandP/oauth2-node/issues",
   "dependencies": {
     "babel-runtime": "^4.7.16",
-    "lodash": "^3.9.3",
-    "promise": "^7.0.1",
+    "lodash": "^3.10.1",
+    "promise": "^7.0.4",
     "querystring": "^0.2.0",
     "superagent": "^1.2.0",
     "superagent-defaults": "^0.1.12",
@@ -21,10 +21,10 @@
   "optionalDependencies": {},
   "devDependencies": {
     "babel": "^5.4.7",
-    "babel-eslint": "^3.1.14",
+    "babel-eslint": "^4.1.5",
     "eslint": "^0.22.1",
-    "glob": "^5.0.10",
-    "tape": "^4.0.0"
+    "glob": "^6.0.1",
+    "tape": "^4.2.2"
   },
   "scripts": {
     "lint": "eslint src/*.js",
