@@ -1,9 +1,9 @@
-import AccessToken from './AccessToken';
-import Promise from 'promise';
+import AccessToken from './AccessToken'
+import Promise from 'promise'
 
 class RefreshToken {
   constructor(client) {
-    this.client = client;
+    this.client = client
   }
 
   getToken(refreshToken) {
@@ -13,21 +13,21 @@ class RefreshToken {
         client_id: this.client.clientID,         // eslint-disable-line camelcase
         client_secret: this.client.clientSecret, // eslint-disable-line camelcase
         refresh_token: refreshToken              // eslint-disable-line camelcase
-      };
+      }
 
       const createAccessToken = (err, res) => {
         if (err) {
-          reject(err);
+          reject(err)
         } else {
-          resolve(new AccessToken(this.client, res.body));
+          resolve(new AccessToken(this.client, res.body))
         }
-      };
+      }
 
       this.client.http.post(this.client.tokenPath)
                       .send(form)
-                      .end(createAccessToken);
-    });
+                      .end(createAccessToken)
+    })
   }
 }
 
-export default RefreshToken;
+export default RefreshToken

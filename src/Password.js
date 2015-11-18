@@ -1,10 +1,10 @@
-import _ from 'lodash';
-import Promise from 'promise';
-import AccessToken from './AccessToken';
+import _ from 'lodash'
+import Promise from 'promise'
+import AccessToken from './AccessToken'
 
 class Password {
   constructor(client) {
-    this.client = client;
+    this.client = client
   }
 
   getToken(username, password, params) {
@@ -15,22 +15,22 @@ class Password {
         client_secret: this.client.clientSecret, // eslint-disable-line camelcase
         username: username,
         password: password
-      };
-      _.assign(form, params);
+      }
+      _.assign(form, params)
 
       const createAccessToken = (err, res) => {
         if (err) {
-          reject(err);
+          reject(err)
         } else {
-          resolve(new AccessToken(this.client, res.body));
+          resolve(new AccessToken(this.client, res.body))
         }
-      };
+      }
 
       this.client.http.post(this.client.tokenPath)
                       .send(form)
-                      .end(createAccessToken);
-    });
+                      .end(createAccessToken)
+    })
   }
 }
 
-export default Password;
+export default Password
